@@ -19,7 +19,7 @@ export default function Reviews() {
         setLoading(true);
 
         const res = await fetch(
-          "https://api.jikan.moe/v4/anime/23283/reviews?page=1",
+          "https://api.jikan.moe/v4/anime/23283/reviews",
           { cache: "no-store" }
         );
 
