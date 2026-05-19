@@ -37,7 +37,9 @@ export default async function Home() {
           </div>
         </div>
 
-        <Reviews />
+        <div data-reviews-section="true">
+          <Reviews />
+        </div>
       </main>
     </div>
   );

@@ -43,7 +43,7 @@ export default function Reviews() {
   if (error) return <p className="text-center text-red-600 py-8">{error}</p>;
 
   return (
-    <div data-reviews="true" className="flex flex-col items-center w-full">
+    <div className="flex flex-col items-center w-full">
       <h1 className="text-3xl font-semibold mb-4">Reviews</h1>
       <button>Page</button>
       {reviews.map((review, index) => (
