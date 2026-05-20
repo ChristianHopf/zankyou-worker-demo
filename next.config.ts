@@ -3,7 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    remotePatterns: [new URL("https://myanimelist.net/images/anime/*/*.webp")],
+    remotePatterns: [
+      new URL("https://myanimelist.net/images/anime/*/*.webp"),
+      new URL("https://cdn.myanimelist.net/images/anime/*/*.webp"),
+    ],
   },
 };
 

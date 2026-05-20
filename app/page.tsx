@@ -37,7 +37,14 @@ export default async function Home() {
           </div>
         </div>
 
-        <div data-reviews-section="true">
+        <button
+          id="worker-button"
+          className="bg-zinc-100 hover:bg-zinc-200 hover:cursor-pointer px-2 py-1 rounded-md"
+        >
+          Run Worker Script
+        </button>
+
+        <div data-reviews-section="true" className="w-full">
           <Reviews />
         </div>
       </main>
