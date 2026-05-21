@@ -1,9 +1,16 @@
 import Reviews from "@/components/Reviews";
+import ReviewsSSR from "@/components/ReviewsSSR";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+export const revalidate = 3600;
+
 async function fetchAnimeData() {
-  const res = await fetch("https://api.jikan.moe/v4/anime/23283");
+  const res = await fetch("https://api.jikan.moe/v4/anime/23283", {
+    next: {
+      revalidate: 3600,
+    },
+  });
 
   if (!res.ok) notFound();
 
@@ -37,6 +44,8 @@ export default async function Home() {
           </div>
         </div>
 
+        <p>Rendered at: {new Date().toISOString()}</p>
+
         <button
           id="worker-button"
           className="bg-zinc-100 hover:bg-zinc-200 hover:cursor-pointer px-2 py-1 rounded-md"
@@ -45,7 +54,7 @@ export default async function Home() {
         </button>
 
         <div data-reviews-section="true" className="w-full">
-          <Reviews />
+          <ReviewsSSR />
         </div>
       </main>
     </div>
