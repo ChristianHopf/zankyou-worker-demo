@@ -3,13 +3,13 @@ import ReviewsSSR from "@/components/ReviewsSSR";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export const revalidate = 3600;
+// export const revalidate = 3600;
 
 async function fetchAnimeData() {
   const res = await fetch("https://api.jikan.moe/v4/anime/23283", {
-    next: {
-      revalidate: 3600,
-    },
+    // next: {
+    //   revalidate: 3600,
+    // },
   });
 
   if (!res.ok) notFound();
