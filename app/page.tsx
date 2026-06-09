@@ -17,8 +17,14 @@ async function fetchAnimeData() {
   return res.json();
 }
 
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
   const data = await fetchAnimeData();
+  const { page } = await searchParams;
+  // const currentPage = Math.max(1, Number(page) || 1);
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center font-sans">
@@ -54,7 +60,7 @@ export default async function Home() {
         </button>
 
         <div data-reviews-section="true" className="w-full">
-          <ReviewsSSR />
+          <Reviews />
         </div>
       </main>
     </div>
