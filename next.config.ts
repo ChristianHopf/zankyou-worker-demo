@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
       new URL("https://cdn.myanimelist.net/images/anime/*/*.webp"),
     ],
   },
+  experimental: {
+    serverComponentsHmrCache: false,
+  },
 };
 
 export default nextConfig;
